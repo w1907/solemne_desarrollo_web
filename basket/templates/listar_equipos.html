@@ -1,0 +1,28 @@
+{% block content %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Nombre</td>
+			<td>Acciones</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if equipos %}
+		{% for equipo in equipos %}
+		<tr>
+			<td>{{equipo.pk}}</td>
+			<td>{{equipo.nombre}}</td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'editar_equipo' equipo.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'eliminar_equipo' equipo.pk %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No hay registro</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

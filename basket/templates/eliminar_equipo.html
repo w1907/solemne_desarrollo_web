@@ -1,0 +1,8 @@
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<h3>Deseas eliminar el registro de {{equipo.nombre}}?</h3>
+	<button class="btn btn-danger" type="submit">Si, eliminar</button>
+	<a class="btn btn-default" href="{ % url 'listar_equipos' %}">Cancelar</a>
+</form>
+{% endblock %}

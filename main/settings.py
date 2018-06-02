@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'basket',
     'bootstrap4',
+    'auth_basket',
 ]
 
 MIDDLEWARE = [

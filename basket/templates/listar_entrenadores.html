@@ -6,19 +6,18 @@
 			<td>Nombre</td>
 			<td>Apodo</td>
 			<td>Edad</td>
-			<td>Acciones</td>
 		</tr>
 	</thead>
 	<tbody>
-		{% if jugadores %}
-		{% for jugador in jugadores %}
+		{% if entrenadores %}
+		{% for entrenador in entrenadores %}
 		<tr>
-			<td>{{jugador.pk}}</td>
-			<td>{{jugador.nombre}}</td>
-			<td>{{jugador.apodo}}</td>
-			<td>{{jugador.edad}}</td>
+			<td>{{entrenador.pk}}</td>
+			<td>{{entrenador.nombre}}</td>
+			<td>{{entrenador.apodo}}</td>
+			<td>{{entrenador.edad}}</td>
 			<td>
-				<a class="btn btn-primary" href="{% url 'editar_jugador' jugador.pk %}">Editar</a>
+				<a class="btn btn-primary" href="{% url 'editar_entrenador' entrenador.pk %}">Editar</a>
 			</td>
 		</tr>
 		{% endfor %}
