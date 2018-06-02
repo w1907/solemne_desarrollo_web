@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
+from basket.defines import Posicion_Jugador_Opcion
 
 # Create your models here.
 
@@ -30,6 +31,7 @@ class Jugador(models.Model):
 	estatura = models.PositiveIntegerField(help_text = 'Indique estatura en centimetros')
 	peso = models.PositiveIntegerField(help_text = 'Indique peso en libras')
 	rut = models.CharField(max_length = 8)
+	posicion = models.CharField(max_length=60, choices = Posicion_Jugador_Opcion, default = 'Base')
 	digito_verificador = models.PositiveIntegerField(help_text = 'Si el digito verificador termina en K, reemplace con un 0')
 	foto = models.ImageField(upload_to = 'foto_jugador')
 	equipo = models.ForeignKey('Equipo', null = True, blank = True, on_delete = models.CASCADE)

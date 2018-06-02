@@ -1,0 +1,27 @@
+{% block content %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Nombre</td>
+			<td>Apodo</td>
+			<td>Edad</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if jugadores %}
+		{% for jugador in jugadores %}
+		<tr>
+			<td>{{jugador.pk}}</td>
+			<td>{{jugador.nombre}}</td>
+			<td>{{jugador.apodo}}</td>
+			<td>{{jugador.edad}}</td>
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No hay registro</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}
